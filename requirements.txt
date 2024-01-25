@@ -1,1 +1,3 @@
 kivy
+ffmpeg-python
+pytest
