@@ -1,3 +1,7 @@
 kivy
 ffmpeg-python
 pytest
+numpy
+matplotlib
+scipy
+mpmath

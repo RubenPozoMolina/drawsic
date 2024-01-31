@@ -14,22 +14,26 @@ NOTES = {
 }
 
 
-class DrawsicSound:
+class SSSound:
     sound = None
-    volume = None
 
-    def __init__(self, sound_path=None):
+    def __init__(self, sound_path=None, volume=1.0):
         self.sound = SoundLoader.load(
             sound_path
         )
-        self.volume = 1.0
+        self.sound.volume = volume
 
-    def play(self, octave, note):
+    def play(self, octave, note, volume=None):
         pitch = NOTES[note]
         self.sound.pitch = pitch * 2 ** octave
-        self.sound.volume = self.volume
+        if volume:
+            self.sound.volume = volume
         self.sound.play()
         sleep(self.sound.length)
+
+    def set_sound(self, sound_bytes):
+        print(type(self.sound))
+        print(sound_bytes)
 
     def __del__(self):
         if self.sound:

@@ -2,17 +2,17 @@ from kivy.app import App
 from kivy.uix.widget import Widget
 
 
-class DrawsicMain(Widget):
+class SynesthesongMain(Widget):
     pass
 
     def create_sound(self):
         pass
 
 
-class DrawsicApp(App):
+class SynesthesongApp(App):
     def build(self):
-        return DrawsicMain()
+        return SynesthesongMain()
 
 
 if __name__ == '__main__':
-    DrawsicApp().run()
+    SynesthesongApp().run()
