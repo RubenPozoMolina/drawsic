@@ -16,5 +16,10 @@ pip install -r requirements.txt
 Execute app:
 
 ```bash
+python synesthesong/main.py
+```
 
+Execute tests:
+```bash
+pytest -s .
 ```
