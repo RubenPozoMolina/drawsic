@@ -23,7 +23,7 @@ class SSSound:
         )
         self.sound.volume = volume
 
-    def play(self, octave, note, volume=None):
+    def play(self, note='DO', octave=0, volume=None):
         pitch = NOTES[note]
         self.sound.pitch = pitch * 2 ** octave
         if volume:

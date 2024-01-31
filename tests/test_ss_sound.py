@@ -14,7 +14,7 @@ class TestDrawsicSound:
     def test_play(self, drawsic_sound):
         for octave in range(-1, 1):
             for note in list(NOTES.keys()):
-                drawsic_sound.play(octave, note)
+                drawsic_sound.play(note, octave)
 
     def test_set_sound(self, drawsic_sound):
 
