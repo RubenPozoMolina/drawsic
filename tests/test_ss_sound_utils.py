@@ -1,4 +1,6 @@
 import random
+from time import sleep
+
 import numpy
 import numpy as np
 import pytest
@@ -24,15 +26,21 @@ class TestSSSoundUtils:
         incremental_array = []
         for item in range(0, 16000):
             incremental_array.append(
-                [random.randint(3000, 4000), random.randint(3500, 4500)]
+                [random.randint(-8000, 8000), random.randint(-8000, 8000)]
             )
-
+        print(len(incremental_array))
         data = np.ndarray(
             shape=(len(incremental_array), 2),
             dtype=numpy.int16,
-            buffer=np.array([incremental_array])
+            buffer=np.array(incremental_array, dtype=np.int16)
         )
         ss_sound_utils.set_sound(data)
         ss_sound_utils.save_sound(test_file)
         sound = SSSound(test_file)
         sound.play()
+
+    def test_plot_sound(self, ss_sound_utils):
+        ss_sound_utils.load_sound('media/a.wav')
+        ss_sound_utils.plot_sound()
+        sleep(1)
+

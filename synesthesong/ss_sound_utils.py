@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 from scipy.io import wavfile
 
 DEFAULT_SAMPLE_RATE = 44100
@@ -16,3 +17,7 @@ class SSSoundUtils:
 
     def save_sound(self, sound_path):
         wavfile.write(sound_path, self.sample_rate, self.data)
+
+    def plot_sound(self):
+        plt.plot(self.data)
+        plt.show()
